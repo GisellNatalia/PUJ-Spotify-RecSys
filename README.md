@@ -9,9 +9,18 @@ The datasets used in this project were obtained from the Spotify API and can be 
 
 ## Implemented Components
 The project consists of three installments, each with a specific objective:
-1. Exploratory data analysis and data cleaning.
-2. Construction of an ETL process to automate the transformation and loading of data to PostgreSQL and BigQuery.
-3. Construction of a dashboard with two indicators and three graphs. Creation of a machine learning model (KNN algorithm) and construction of a API REST to recommend songs from an entered song.
+### 1. Exploratory Data Analysis and Data Cleaning.
+Folder: /EDA
+
+This component involves the analysis and cleaning of the Spotify data to prepare it for the subsequent components.
+
+### 2. ETL Process
+Folder: /ETL
+
+This component includes the construction of an ETL process to automate the transformation and loading of data to PostgreSQL and BigQuery.
+
+### 3.  Dashboard, Machine Learning Model, and REST API
+This component involves the construction of a dashboard with two indicators and three graphs to provide insights into the Spotify data. Additionally, a machine learning model was created using the KNN algorithm to recommend songs based on an entered song. Finally, a REST API was constructed to enable the recommendation of songs through the created model.
 
 ## How to use the repository
 Each component is located in a separate folder at the root of the repository. Inside each folder is a README file that details the steps for its execution and deployment.
