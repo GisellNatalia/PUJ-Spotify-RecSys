@@ -14,7 +14,7 @@ In the data cleaning notebooks, the identified issues in the data exploration ar
 The cleaned data is then saved to a new file for future use in modeling or further analysis.
 
 ## Folder structure
-
+```
 EDA/
   |- artists/
   |  |- artists_data_analysis.ipynb
@@ -22,3 +22,5 @@ EDA/
   |- songs/
   |  |- songs_data_analysis.ipynb
   |  |- songs_data_cleaning.ipynb
+
+```
