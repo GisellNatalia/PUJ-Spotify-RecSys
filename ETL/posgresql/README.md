@@ -1,4 +1,4 @@
-#  PostgreSQL
+#  PostgreSQL ETL
 In this folder data is extracted from two CSV files, transformed and loaded into a PostgreSQL database. In the file "tracks_mod.csv" there are data about songs, while in "artists_mod.csv" there are data about artists. The objective is to load this data into a database for further analysis.
 
 ## Prerequisites
@@ -24,11 +24,11 @@ posgresql/
 
 ## Description of Folders
 - `data/`: This folder contains the CSV files that will be used for the data extraction.
-- `src/`: This folder contains the Python script ETL_data.py, which is responsible for extracting, transforming, and loading the data into the PostgreSQL database.
+- `src/`: This folder contains the Python script `ETL_data.py`, which is responsible for extracting, transforming, and loading the data into the PostgreSQL database.
 
 ## How to Run
 1. Make sure you have installed all the necessary packages and have a PostgreSQL database installed and configured.
 2. Clone this repository to your local machine.
-3. Navigate to the src/ folder in the terminal.
-4. Run the command python ETL_data.py.
+3. Navigate to the `src/` folder in the terminal.
+4. Run the command python `ETL_data.py`.
 5. The data will be extracted, transformed, and loaded into the PostgreSQL database.
