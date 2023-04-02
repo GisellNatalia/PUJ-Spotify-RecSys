@@ -3,12 +3,11 @@ In this folder data is extracted from two CSV files, transformed and loaded into
 
 ## Prerequisites
 In order to run this project you need to have the following Python packages installed:
-
-pandas
-numpy
-scikit-learn
-psycopg2
-sqlalchemy
+- pandas
+- numpy
+- scikit-learn
+- psycopg2
+- sqlalchemy
 
 In addition, you must have a PostgreSQL database installed and configured with the corresponding credentials.
 
