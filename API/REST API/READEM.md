@@ -1,43 +1,41 @@
-# Rest API
+# API REST
+This folder contains the code for the REST API that recommends similar songs based on the characteristics of an entered song. The API uses a machine learning model trained on song data stored in a PostgreSQL database.
 
-Esta carpeta contiene el código para la REST API que recomienda canciones similares basadas en las características de una canción ingresada. La API utiliza un modelo de aprendizaje automático entrenado en los datos de canciones almacenados en una base de datos PostgreSQL.
+## Requirements
 
-## Requerimientos
-
-Para ejecutar la API, se necesitan los siguientes paquetes de Python:
+To run the API, the following Python packages are required:
 
 - fastapi
 - uvicorn
-- psycopg2
-- pandas
-- numpy
-- scikit-learn
+-psycopg2
+- panda
+-numpy
+-scikit-learn
 
-Estos paquetes se pueden instalar ejecutando el siguiente comando en la terminal: `pip install -r requirements.txt`
+These packages can be installed by running the following command in the terminal: `pip install -r requirements.txt`
 
-## Ejecución
+## Execution
 
-Para ejecutar la API, abra una terminal en la carpeta `rest_api` y ejecute el siguiente comando: `uvicorn app:app --reload`
+To run the API, open a terminal in the `rest_api` folder and run the following command: `uvicorn app:app --reload`
 
 
-Esto iniciará el servidor de la API en `http://localhost:8000/`.
+This will start the API server at `http://localhost:8000/`.
 
 ## Endpoints
 
-La API tiene un único endpoint que recibe los datos de una canción y devuelve 10 recomendaciones de canciones similares. El endpoint se encuentra en la siguiente URL:
+The API has a single endpoint that receives the data for a song and returns 10 recommendations for similar songs. The endpoint is located at the following URL:
 
 http://localhost:8000/recommendations
 
 
-El endpoint debe ser accedido mediante una solicitud POST. La solicitud debe contener los siguientes parámetros en formato JSON:
+The endpoint must be accessed via a POST request. The request must contain the following parameters in JSON format:
 
-- song_name: El nombre de la canción ingresada.
-- artist_name: El nombre del artista de la canción ingresada.
+- song_name: The name of the song entered.
+- artist_name: The name of the artist of the entered song.
 
-El endpoint devolverá una respuesta en formato JSON con las canciones recomendadas. Cada canción recomendada tendrá los siguientes campos:
+The endpoint will return a response in JSON format with the recommended songs. Each recommended song will have the following fields:
 
-- name: El nombre de la canción.
-- artists: Una lista de los nombres de los artistas de la canción.
-- genres: Una lista de los géneros de los artistas de la canción.
-
+- name: The name of the song.
+- artists: A list of the names of the artists of the song.
+- genres: A list of the genres of the artists in the song.
 
