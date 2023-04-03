@@ -16,7 +16,7 @@ These packages can be installed by running the following command in the terminal
 
 ## Execution
 
-To run the API, open a terminal in the `rest_api` folder and run the following command: `uvicorn app:app --reload`
+To run the API, open a terminal in the `API REST` folder and run the following command: `uvicorn app:app --reload`
 
 
 This will start the API server at `http://localhost:8000/`.
