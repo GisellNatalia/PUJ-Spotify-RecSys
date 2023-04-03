@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 import psycopg2
 import pandas as pd
+import numpy as np
 from sklearn.cluster import KMeans
 import random
 
@@ -31,7 +32,6 @@ genres_df = pd.DataFrame(genre_results, columns=genre_columns)
 # Entrenar el modelo KNN con los datos de las características de las canciones
 model = KMeans(n_clusters=10)
 model.fit(songs_df[['energy', 'valence', 'danceability', 'instrumentalness', 'tempo', 'key']])
-songs_df['cluster']=model.labels_
 
 # Crear la aplicación FastAPI
 app = FastAPI()
@@ -45,19 +45,31 @@ async def get_recommendations(song_name: str, artist_name: str):
     print(song)
     # Obtener las canciones recomendadas
     song_cluster = model.predict(song[['energy', 'valence', 'danceability', 'instrumentalness', 'tempo', 'key']])[0]
-    cluster_songs = songs_df.loc[(songs_df['cluster'] == song_cluster) & ((songs_df['popularity'] == song['popularity'] - 5) | (songs_df['popularity'] == song['popularity'] + 5))]
+    cluster_songs = songs_df.loc[(model.labels_== song_cluster) & (np.abs(songs_df['popularity'] - songs_df['popularity']) < 5)]
     recommendations = cluster_songs.sort_values('popularity', ascending=False).head(10)
     
-    # Obtener la información de las canciones recomendadas de las tablas cargadas en el paso 1
+    # Obtener la información de las canciones recomendadas de las tablas cargadas 
+    # Obtener la información de las canciones recomendadas de las tablas cargadas 
     songs = []
     for index, row in recommendations.iterrows():
         artists_names = []
-        for artist_id in row['id_artists']:
-            artist_name = artists_df.loc[artists_df['id'] == artist_id]['name'].iloc[0]
-            artists_names.append(artist_name)
-        song_genre = genres_df.loc[genres_df['id'] == row['genre']]['name'].iloc[0]
-        song = {'name': row['name'], 'artists': artists_names, 'genre': song_genre}
+        artist_ids = row['id_artists'].replace('[','').replace(']','').replace('\'','').split(', ')
+        for artist_id in artist_ids:
+            if artists_df['id'].isin([artist_id]).any():
+                artist_name = artists_df.loc[artists_df['id'] == artist_id]['name'].iloc[0]
+                artists_names.append(artist_name)
+        genres = []
+        for artist_id in artist_ids:
+            if artists_df['id'].isin([artist_id]).any():
+                artist_genres = artists_df.loc[artists_df['id'] == artist_id]['genres'].iloc[0]
+                for genre_name in artist_genres.split(','):
+                    genre_name = genre_name.strip()
+                    if genre_name not in genres:
+                        genres.append(genre_name)
+        song = {'name': row['name'], 'artists': artists_names, 'genres': genres}
         songs.append(song)
+
+
     
     # Devolver las canciones recomendadas como respuesta de la solicitud
     return {'recommendations': songs}
