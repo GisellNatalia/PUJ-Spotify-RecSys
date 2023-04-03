@@ -9,8 +9,8 @@ To get started with the dashboard, you will need the following:
 ## Folder structure
 ```
 Dashboard/
-  |- spotify_dashboard.pbix
-  |- spotify_dashboard.pdf
+  |- Dashboard.pbix
+  |- Dashboard.pdf
 ```
 
 ## Usage
