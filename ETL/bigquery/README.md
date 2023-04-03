@@ -16,16 +16,11 @@ In addition, you must have a BigQuery database installed and configured with the
 ## Folder structure
 ```
 bigquery/
-  |- data/
-  |  |- tracks_mod.csv
-  |  |- artists_mod.csv
-  |- src/
-  |  |- ETL_data.py
+  |- ETL_data.py
 
 ```
 
 ## Description of Folders
-- `data/`: This folder contains the CSV files that will be used for the data extraction.
 - `src/`: This folder contains the Python script `ETL_data.py`, which is responsible for extracting, transforming, and loading the data into the BigQuery database.
 
 ## How to Run
