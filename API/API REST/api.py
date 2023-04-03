@@ -36,7 +36,6 @@ model = joblib.load(os.path.join(os.path.dirname(__file__), '..', 'K-Means', 'sa
 # Create the FastAPI application
 app = FastAPI()
 
-
 # Define the endpoint that receives song data and returns 10 similar song recommendations
 @app.post("/recommendations")
 async def get_recommendations(song_name: str, artist_name: str):
