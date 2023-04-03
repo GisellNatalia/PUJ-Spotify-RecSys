@@ -22,6 +22,7 @@ This component includes the construction of an ETL process to automate the trans
 
 ### 3.  Dashboard, Machine Learning Model, and API REST.
 Folders: `/Dashboard` and `/API`
+
 This component involves the construction of a dashboard with two indicators and three graphs to provide insights into the Spotify data. Additionally, a machine learning model was created using the KNN algorithm to recommend songs based on an entered song. Finally, a API REST was constructed to enable the recommendation of songs through the created model.
 
 ## How to use the repository
