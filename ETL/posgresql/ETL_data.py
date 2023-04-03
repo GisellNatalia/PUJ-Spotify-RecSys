@@ -13,16 +13,16 @@ import uuid
 #############################################################################################################################################
 # EXTRACT DATA
 
-songs_df = pd.read_csv(r"C:/Users/gisel/OneDrive/Documentos/GitHub/PUJ-Spotify-RecSys/ETL/posgresql/data/traks_mod.csv")
-artists_df = pd.read_csv(r"C:/Users/gisel/OneDrive/Documentos/GitHub/PUJ-Spotify-RecSys/ETL/posgresql/data/artists_mod.csv")
+url_artists = "https://drive.google.com/file/d/1frEhHHnMbib-f56jSNu_aDjxKRqtAcuZ/view?usp=share_link"
+file_id_artists =url_artists.split('/')[-2]
+dwn_url_artists ='https://drive.google.com/uc?id=' + file_id_artists
+artists_df = pd.read_csv(dwn_url_artists)
 
-artists_df.shape
-artists_df.dtypes
-artists_df.head()
-
-songs_df.shape
-songs_df.dtypes
-songs_df.head()
+url_songs = "https://drive.google.com/file/d/1ULYDYzryDnJxuOgJ8rq0JtDCnTLS5Pri/view?usp=share_link"
+file_id_songs = url_songs.split('/')[-2]
+dwn_url_songs = "https://drive.google.com/uc?id=" + file_id_songs
+output_songs = "songs_df.csv"
+songs_df = pd.read_csv("songs_df.csv")
 
 ########################################################################################################################################
 
