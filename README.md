@@ -11,12 +11,12 @@ The datasets used in this project were obtained from the Spotify API and can be 
 The project consists of three installments, each with a specific objective:
 
 ### 1. Exploratory Data Analysis and Data Cleaning.
-Folder: /EDA
+Folder: `/EDA`
 
 This component involves the analysis and cleaning of the Spotify data to prepare it for the subsequent components.
 
 ### 2. ETL Process.
-Folder: /ETL
+Folder: `/ETL`
 
 This component includes the construction of an ETL process to automate the transformation and loading of data to PostgreSQL and BigQuery.
 
