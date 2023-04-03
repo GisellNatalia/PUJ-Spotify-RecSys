@@ -2,7 +2,7 @@
 This project aims to build a song recommendation system from Spotify data. We used two datasets, one for songs and the other for artists, which were cleaned and stored in PostgreSQL and BigQuery.
 
 ## Team Members
-Gisell Natalia Cristiano Muñoz & Manuel Andres Paz Castillo
+Manuel Andres Paz Castillo & Gisell Natalia Cristiano Muñoz 
 
 ## Data
 The datasets used in this project were obtained from the Spotify API and can be found [here](https://drive.google.com/drive/folders/1toW8fa6ag4oNU00RuJHVUwhwEqmMsJaZ). 
